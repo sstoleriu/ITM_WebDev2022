@@ -1,11 +1,9 @@
 .nav {
     margin: 0;
 }
-
 .profile {
     display: flex;
 }
-
 .profile-details {
     flex: 2;
     background-color: var(--charcoal-grey);

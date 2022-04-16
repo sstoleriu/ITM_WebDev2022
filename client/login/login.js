@@ -7,7 +7,7 @@ function processLoginRequest(data) {
         body: JSON.stringify(data)
     }).then((res) => {
             if(res.status === 201) {
-                alert('Login Succesfull!');
+                window.location = "/user/profile";
             } else {
                 alert('Error!');
             }
