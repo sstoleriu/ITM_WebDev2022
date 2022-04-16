@@ -11,9 +11,11 @@ function processRegisterRequest(data) {
             console.log(data);
             if(res.status === 201) {
                 alert('Register Succesfull!');
+                window.location = "/auth/login";
             } else {
                 alert('Error!');
             }
+
         });
     });
 }
