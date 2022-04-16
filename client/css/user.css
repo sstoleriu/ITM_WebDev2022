@@ -74,6 +74,16 @@
     overflow-y: auto;
     display: flex;
     flex-direction: column;
+    position: relative;
+}
+
+.profile-settings .loading{
+    display: none;
+    z-index: 1000;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .profile-settings-header {
@@ -125,6 +135,17 @@
 .setting-group .ms-list {
     border: none;
     border-radius: 10px!important;
+}
+
+.setting-group .button {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    background-color: var(--orange);
+    color: white;
+    margin-top: 20px;
+    border-radius: 5px;
 }
 
 /* SCROLLBAR FOR .profile-settings */

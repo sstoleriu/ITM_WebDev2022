@@ -9,21 +9,19 @@ router.get("/profile", (req, res) => {
 });
 
 router.get("/profile-data", async (req, res) => {
-    /*
-    if(!req.session.email) {
-        res.status(401).send();
-        return;
-    }
-    */
+    // if(!req.session._id) {
+    //     res.status(401).send();
+    //     return;
+    // }
    console.log(req.session);
 
-    const profileData = await user.findOne(
+    const profileData = await User.findOne(
         {
             _id: req.session._id
         }
     );
 
-    res.status(200).send(profileData);
+    res.send(profileData);
 });
 
 router.put("/:id/update", async (req, res) => {
