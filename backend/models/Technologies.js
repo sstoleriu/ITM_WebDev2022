@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const technologiesSchema = new mongoose.Schema(
     {
-        name: {type: String, required:true, unique:true},
+        name: {type: String, required:true,default: null},
     },
     {timestamps: true},
     {collection: 'itm_dev_web'}

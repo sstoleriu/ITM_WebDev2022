@@ -4,7 +4,7 @@ const path = require('path');
 var sess;
 router.get("/", (req, res) => {
     sess = req.session;
-    if(sess.email){
+    if(sess._id){
         res.redirect("/dashbord");
     }
     else
