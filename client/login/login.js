@@ -6,16 +6,11 @@ function processLoginRequest(data) {
         },
         body: JSON.stringify(data)
     }).then((res) => {
-
-        res.json().then(data => {
-            console.log(res.status);
-            console.log(data);
             if(res.status === 201) {
                 alert('Login Succesfull!');
             } else {
                 alert('Error!');
             }
-        });
     });
 }
 
