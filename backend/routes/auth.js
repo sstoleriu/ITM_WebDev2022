@@ -40,7 +40,7 @@ router.post('/login', async (req, res) => {
 
         const newUser = await user.findOne(
             {
-                email: req.body.username
+                email: req.body.email
             }
         );
 
