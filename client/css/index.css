@@ -1,0 +1,10 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: normal;
+    overflow-x: hidden;
+    overflow: overlay;
+}

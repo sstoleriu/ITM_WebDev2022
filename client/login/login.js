@@ -1,5 +1,5 @@
 function processLoginRequest(data) {
-    fetch('http://localhost:5000/api/auth/login', {
+    fetch('http://localhost:5000/auth/login', {
         method:'POST',
         body:JSON.stringify(data)
     }).then((res) => {
