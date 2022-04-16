@@ -21,8 +21,8 @@ function processRegisterRequest(data) {
 function registerButtonEvent() {
     let inputs = document.getElementsByTagName('input');
     let requestData = {
-        email: inputs[1].value,
-        password: inputs[2].value,
+        email: inputs[0].value,
+        password: inputs[1].value,
     };
     processRegisterRequest(requestData);
 }
