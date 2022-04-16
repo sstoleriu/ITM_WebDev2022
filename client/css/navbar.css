@@ -5,17 +5,14 @@
     height: 60px;
     background: var(--charcoal-grey);
     color: var(--light-pink);
-
-    position: fixed;
-    top: 0;
-    
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    margin-bottom: 50px;
-
     box-shadow: 0 2px 5px var(--charcoal-grey);
+    z-index: 10;
+
+    position: fixed;
+    top: 0;    
 }
 
 .nav-title {
@@ -28,6 +25,11 @@
 
 .nav-title span {
     font-size: 18px;
+}
+
+.nav-title a {
+    text-decoration: none;
+    color: var(--light-pink);
 }
 
 .nav-group-buttons {
@@ -86,6 +88,7 @@
     position: absolute;
     top: 60px;
     left: 0;
+    padding-top: 50px;
 }
 
 .nav-group-buttons-mobile a {

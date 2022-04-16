@@ -11,7 +11,8 @@ body, html {
     background-color: var(--charcoal-grey);
     padding: 30px 0 50px 0;
     border-radius: 10px;
-    box-shadow: 0px 2px 20px black;
+    box-shadow: 0px 2px 20px var(--charcoal-grey);
+    margin-top: 150px;
 }
 
 .login-title{
