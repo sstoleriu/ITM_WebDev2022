@@ -18,7 +18,7 @@ router.post("/register", async (req, res) => {
     const newUser = new user({
         username: req.body.username,
         email: req.body.email,
-        password: req.body.password,
+        password: req.body.password
     });
 
     try {
@@ -40,10 +40,11 @@ router.post('/login', async (req, res) => {
 
         const newUser = await user.findOne(
             {
-                userEmail: req.body.username
-                  
+                email: req.body.username
             }
         );
+
+        console.log("User gasit:", newUser);
 
         inputPassword = req.body.password;
         if (!newUser){
@@ -53,6 +54,7 @@ router.post('/login', async (req, res) => {
             res.status(401).json("Wrong Password");
             console.log("wp")
         } else {
+            req.session.email = newUser.email;
             res.status(201).send("OK");
             console.log("ok")
         }

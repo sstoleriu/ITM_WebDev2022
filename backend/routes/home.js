@@ -4,11 +4,12 @@ const path = require('path');
 var sess;
 router.get("/", (req, res) => {
     sess = req.session;
-    sess.userEmail = req.body.email;
     if(sess.email){
         res.redirect("/dashbord");
     }
-    res.sendFile(path.join(__dirname+'/../../client/index.html'));
+    else
+    res.redirect("/auth/login");
+    //res.sendFile(path.join(__dirname+'/../../client/index.html'));
 
 });
 

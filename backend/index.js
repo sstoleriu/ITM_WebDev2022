@@ -7,6 +7,8 @@ const dotenv = require('dotenv');
 const userRoute = require("./routes/user");
 const authRoute = require("./routes/auth");
 const homeRoute = require("./routes/home");
+const comRoute = require("./routes/company");
+
 const session = require('express-session');
 dotenv.config();
 
@@ -20,6 +22,7 @@ mongoose
     app.use(session({secret: 'papuc'}));
     app.use(cors());
     app.use(express.json());
+    app.use("/com", comRoute); 
     app.use("/user", userRoute); 
     app.use("/auth", authRoute);
     app.use("/", homeRoute);
