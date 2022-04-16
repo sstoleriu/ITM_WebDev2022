@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const userRoute = require("./routes/user");
 const authRoute = require("./routes/auth");
+const session = require('express-session');
 dotenv.config();
 
 mongoose
@@ -15,6 +16,7 @@ mongoose
         console.log(err);
     });
 
+    app.use(session({secret: 'papuc'}));
     app.use(cors());
     app.use(express.json());
     app.use("/api/user", userRoute); 
