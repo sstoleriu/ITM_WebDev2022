@@ -23,7 +23,6 @@ router.put("/:id/update", async (req, res) => {
         const updatedCom = await company.findByIdAndUpdate(
             req.params.id,
             {
-                $add: req.body.internships,
                 $set: req.body,
             },
             { new: true }
