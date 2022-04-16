@@ -1,7 +1,4 @@
 const mongoose = require("mongoose");
-const { param } = require("../routes/match");
-const internship = require(__dirname +'/Internship.js').schema;
-const router = require("express").Router();
 
 const companySchema = new mongoose.Schema(
     {
