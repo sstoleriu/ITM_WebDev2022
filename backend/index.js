@@ -8,6 +8,7 @@ const userRoute = require("./routes/user");
 const authRoute = require("./routes/auth");
 const homeRoute = require("./routes/home");
 const comRoute = require("./routes/company");
+const matchingRoute = require("./routes/match");
 
 const session = require('express-session');
 dotenv.config();
@@ -19,12 +20,17 @@ mongoose
         console.log(err);
     });
 
-    app.use(session({secret: 'papuc'}));
+    app.use(session({
+        secret: 'papuc',
+        cookie: {maxAge: 1000 * 60 * 60 * 24},
+        resave: false 
+    }));
     app.use(cors());
     app.use(express.json());
     app.use("/com", comRoute); 
     app.use("/user", userRoute); 
     app.use("/auth", authRoute);
+    app.use("/matching", matchingRoute);
     app.use("/", homeRoute);
     app.use(express.static('client'));
 
