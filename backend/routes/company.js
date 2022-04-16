@@ -17,4 +17,20 @@ router.post("/create", async(req, res) => {
     }
 });
 
+router.put("/:id/update", async (req, res) => {
+    console.log("iid com",req.params.id);
+    try {
+        const updatedCom = await company.findByIdAndUpdate(
+            req.params.id,
+            {
+                $set: req.body,
+            },
+            { new: true }
+        );
+        res.status(200).json(updatedCom);
+    } catch (err) {
+        res.status(400).json(err);
+    }
+});
+
 module.exports = router;

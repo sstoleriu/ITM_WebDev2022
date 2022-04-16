@@ -54,19 +54,18 @@ router.post('/login', async (req, res) => {
             res.status(401).json("Wrong Password");
             console.log("wp")
         } else {
-            req.session.email = newUser.email;
+            req.session._id = newUser._id;
             res.status(201).send("OK");
             console.log("ok")
         }
 
         console.log("Ajuns la final");
 
-    }catch(err){
+    } catch(err){
         console.log(err);
         res.status(500).json(err);
         //res.send(err);
     }
-
 });
 
 module.exports = router;
