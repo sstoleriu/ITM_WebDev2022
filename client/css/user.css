@@ -1,7 +1,3 @@
-body, html {
-    overflow: hidden;
-}
-
 .nav {
     margin: 0;
 }
@@ -18,7 +14,8 @@ body, html {
 }
 
 .profile-details::-webkit-scrollbar {
-    width: 0;
+    position: absolute;
+    left: 0;
 }
 
 .profile-details-container {

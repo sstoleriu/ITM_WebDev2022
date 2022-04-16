@@ -7,8 +7,7 @@ body, html {
     font-style: normal;
 
     background-color: var(--darkgrey);
-    overflow-x: hidden;
-    overflow: overlay;
+    overflow: hidden;
 }
 
 body {
