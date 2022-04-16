@@ -5,6 +5,11 @@ body, html {
 
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-style: normal;
-    overflow-x: hidden;
-    overflow: overlay;
+
+    background-color: var(--darkgrey);
+    overflow: hidden;
+}
+
+body {
+    padding-top: 60px;
 }
