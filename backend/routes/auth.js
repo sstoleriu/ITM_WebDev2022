@@ -2,7 +2,7 @@ const router = require("express").Router();
 const user = require("../models/User");
 const path = require('path');
 const session = require('express-session');
-const CryptoJS = require("crypto-js");
+
 //REGISTER
 
 router.get("/register", (req, res)=>{
@@ -18,10 +18,7 @@ router.post("/register", async (req, res) => {
     const newUser = new user({
         username: req.body.username,
         email: req.body.email,
-        password: CryptoJS.AES.encrypt(
-            req.body.password,
-            process.env.PASS_SEC
-          ).toString(),
+        password: req.body.password,
     });
 
     try {
@@ -44,26 +41,20 @@ router.post('/login', async (req, res) => {
         const newUser = await user.findOne(
             {
                 userEmail: req.body.username
+                  
             }
         );
-        
 
-        const hashedPassword = CryptoJS.AES.decrypt(
-            newUser.password,
-            process.env.PASS_SEC
-        );
-
-
-        const originalPassword = hashedPassword.toString(CryptoJS.enc.Utf8);
-
-        const inputPassword = req.body.password;    
-        
+        inputPassword = req.body.password;
         if (!newUser){
             res.status(401).json("Wrong Email");
-        } else if(originalPassword != inputPassword) {
+            console.log("we")
+        } else if(newUser.password != inputPassword) {
             res.status(401).json("Wrong Password");
+            console.log("wp")
         } else {
             res.status(201).send("OK");
+            console.log("ok")
         }
 
         console.log("Ajuns la final");
