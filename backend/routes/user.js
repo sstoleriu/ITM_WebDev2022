@@ -2,6 +2,7 @@ const Internship = require("../models/Internship");
 const User = require("../models/User");
 const session = require('express-session');
 const router = require("express").Router();
+const path = require('path');
 
 router.get("/profile", (req, res) => {
     res.sendFile(path.join(__dirname + "/../../client/user/user.html"));
@@ -54,5 +55,4 @@ router.get("/get", async (req, res) =>{
     }
 
 });
-
 module.exports = router;

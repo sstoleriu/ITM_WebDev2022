@@ -6,6 +6,9 @@
     background: var(--charcoal-grey);
     color: var(--light-pink);
 
+    position: fixed;
+    top: 0;
+    
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -16,11 +19,11 @@
 }
 
 .nav-title {
-    flex: 1;
     font-size: clamp(1rem, 1.5vw, 2rem);
     font-weight: 800;
     margin: 0 20px;
     min-width: 140px;
+    cursor: pointer;
 }
 
 .nav-title span {
