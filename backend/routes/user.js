@@ -26,10 +26,13 @@ router.get("/profile-data", async (req, res) => {
     res.status(200).send(profileData);
 });
 
-router.put("/:id/update", async (req, res) => {
+router.put("/update", async (req, res) => {
+    let id = req.session._id;
+    console.log(id);
     try {
         const updatedUser = await User.findByIdAndUpdate(
-            req.params.id,
+            id,
+            //req.params.id,
             {
                 $set: req.body,
             },
