@@ -2,6 +2,7 @@ const Internship = require("../models/Internship");
 const user = require("../models/User");
 
 const router = require("express").Router();
+const path = require('path');
 
 router.get("/profile", (req, res) => {
     res.sendFile(path.join(__dirname + "/../../client/user/user.html"));
@@ -24,6 +25,5 @@ router.get("/profile-data", async (req, res) => {
 
     res.status(200).send(profileData);
 });
-
 
 module.exports = router;

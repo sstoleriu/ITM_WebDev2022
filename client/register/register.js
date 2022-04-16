@@ -11,9 +11,11 @@ function processRegisterRequest(data) {
             console.log(data);
             if(res.status === 201) {
                 alert('Register Succesfull!');
+                window.location = "/auth/login";
             } else {
                 alert('Error!');
             }
+
         });
     });
 }
@@ -23,6 +25,9 @@ function registerButtonEvent() {
     let requestData = {
         email: inputs[0].value,
         password: inputs[1].value,
+        isStudent: !inputs[2].value,
+        isCompany: inputs[2].value,
+
     };
     processRegisterRequest(requestData);
 }
