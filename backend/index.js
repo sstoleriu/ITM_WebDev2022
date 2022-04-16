@@ -20,7 +20,7 @@ mongoose
     app.use(session({secret: 'papuc'}));
     app.use(cors());
     app.use(express.json());
-    app.use("/api/user", userRoute); 
+    app.use("/user", userRoute); 
     app.use("/auth", authRoute);
     app.use("/", homeRoute);
     app.use(express.static('client'));

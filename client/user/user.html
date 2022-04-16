@@ -11,9 +11,133 @@
         <link rel="stylesheet" href="/css/index.css"> 
         <link rel="stylesheet" href="/css/navbar.css">
         <link rel="stylesheet" href="/css/user.css">
+        <link rel="stylesheet" href="/css/multi-select.css">
+
+        <!-- jQuerry -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     </head>
 
     <body>
+        <nav class="nav">
+            <span class="nav-title">
+                Intern<span>&#9972;</span>Assistant
+            </span>
 
+            <div class="nav-group-buttons">
+                <div class="nav-buttons">
+                    <a class="" href="#">Home</a>
+                    <a class="" href="#">Matches</a>
+                    <a class="" href="#">About</a>
+                </div>
+
+                <div class="nav-auth">
+                    <a class="" href="/auth/login">Login</a>
+                    <a class="" href="/auth/register">Register</a>
+                </div>
+            </div>
+
+            <!-- MOBILE MENU -->
+            <div class="mobile-nav" id="menuB">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+
+            <div class="nav-group-buttons-mobile" id="mobile-nav">
+                <div class="nav-buttons">
+                    <a class="" href="#">Home</a>
+                    <a class="" href="#">Matches</a>
+                    <a class="" href="#">About</a>
+                </div>
+
+                <div class="nav-auth">
+                    <a class="" href="/auth/login">Login</a>
+                    <a class="" href="/auth/register">Register</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="profile">
+            <div class="profile-details">
+                <div class="profile-details-container">
+                    <img src="https://via.placeholder.com/150" alt="profile-details-img">
+                    <h2 class="profile-details-name">Ion Popescu</h2>
+                    <h4 class="profile-details-subtitle">student</h4>
+                </div>
+                
+                <div class="profile-feedback">
+                    <div class="profile-feedback-container">
+                        <h4 class="profile-feedback-name">Shoreline</h4>
+                        <p class="profile-feedback-date">16-Apr-22</p>
+                        <p class="profile-feedback-text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </p>
+                    </div>
+
+                    <div class="profile-feedback-container">
+                        <h4 class="profile-feedback-name">SABS</h4>
+                        <p class="profile-feedback-date">12-Apr-22</p>
+                        <p class="profile-feedback-text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </p>
+                    </div>
+
+                    <div class="profile-feedback-container">
+                        <h4 class="profile-feedback-name">SABS</h4>
+                        <p class="profile-feedback-date">12-Apr-22</p>
+                        <p class="profile-feedback-text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile-settings">
+                <h2 class="profile-settings-header">
+                    Setup your account:
+                </h2>
+
+                <div class="setting-group">
+                    <h4 class="setting-title">Email:</h4>
+
+                    <input type="email" placeholder="Email" />
+                </div>
+
+                <div class="setting-group">
+                    <h4 class="setting-title">What I Know:</h4>
+                    <select class="setting-select" multiple="multiple" id="my-select1" name="my-select[]">
+                        <option value='elem_1'>elem 1</option>
+                        <option value='elem_2'>elem 2</option>
+                        <option value='elem_3'>elem 3</option>
+                        <option value='elem_4'>elem 4</option>
+                        <option value='elem_100'>elem 100</option>
+                    </select>
+                </div>
+
+                <div class="setting-group">
+                    <h4 class="setting-title">What I Want To Know:</h4>
+                    <select class="setting-select" multiple="multiple" id="my-select2" name="my-select[]">
+                        <option value='elem_1'>elem 1</option>
+                        <option value='elem_2'>elem 2</option>
+                        <option value='elem_3'>elem 3</option>
+                        <option value='elem_4'>elem 4</option>
+                        <option value='elem_100'>elem 100</option>
+                    </select>
+                </div>
+
+                <div class="setting-group">
+                    <h4 class="setting-title">Period of availability</h4>
+
+                    <lable for="start-date">From</lable>
+                    <input type="date" id="start" name="start-date" value="" min="2022-04-15" max="2030-12-31">
+
+                    <lable for="end-date">to</lable>
+                    <input type="date" id="start" name="end-date" value="" min="2022-04-15" max="2030-12-31">
+                </div>
+            </div>
+        </div>
+
+        <script src="/js/jquery.multi-select.js"></script>
+        <script src="/js/userFront.js"></script>
     </body>
 </html>
