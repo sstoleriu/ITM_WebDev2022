@@ -1,21 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div style="margin-left: 40%;">
-        <h1>Register User</h1>
-        <form style="text-align: center;">
-            <input style="display:block;" type="text" placeholder="Username" />
-            <input style="display: block;" type="text" placeholder="Email" />
-            <input style="display: block;" type="password" placeholder="Password" />
-            <input type="button" id="rgBtn" value="Register!" />
-        </form>
-    </div>
-    <script src="register.js"></script>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Register | InternShip Assistant</title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="/css/index.css"> 
+        <link rel="stylesheet" href="/css/navbar.css">
+        <link rel="stylesheet" href="/css/register.css">
+    </head>
+    <body>
+        <nav class="nav">
+            <span class="nav-title">
+                Intern<span>&#9972;</span>Assistant
+            </span>
+
+            <div class="nav-group-buttons">
+                <div class="nav-buttons">
+                    <a class="" href="#">Home</a>
+                    <a class="" href="#">Matches</a>
+                    <a class="" href="#">About</a>
+                </div>
+
+                <div class="nav-auth">
+                    <a class="" href="/auth/login">Login</a>
+                    <a class="" href="/auth/register">Register</a>
+                </div>
+            </div>
+
+            <!-- MOBILE MENU -->
+            <div class="mobile-nav" id="menuB">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+
+            <div class="nav-group-buttons-mobile" id="mobile-nav">
+                <div class="nav-buttons">
+                    <a class="" href="#">Home</a>
+                    <a class="" href="#">Matches</a>
+                    <a class="" href="#">About</a>
+                </div>
+
+                <div class="nav-auth">
+                    <a class="" href="/auth/login">Login</a>
+                    <a class="" href="/auth/register">Register</a>
+                </div>
+            </div>
+        </nav>
+
+
+        <div class="register">
+            <h1 class="register-title">Register</h1>
+            <form class="register-form">
+                <input class="register-form-input" type="text" placeholder="Email" />
+                <input class="register-form-input" type="password" placeholder="Password" />
+                <span>
+                    <input class="" type="checkbox" name="Company"/> 
+                    <label for="Company">Te inregistrezi ca o companie?</label>
+                </span>
+
+                <span>
+                    <input class="" type="checkbox" name="Company"/> 
+                    <label for="Company">Accepti termenii si conditiile?</label>
+                </span>
+                <input class="register-form-submit" type="button" id="rgBtn" value="Register!" />
+            </form>
+        </div>
+        
+        <script src="/register/register.js"></script>
+        <script src="/js/navbar.js"></script>
+    </body>
 </html>

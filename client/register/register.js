@@ -1,5 +1,5 @@
 function processRegisterRequest(data) {
-    fetch('http://localhost:5000/api/auth/register', {
+    fetch('http://localhost:5000/auth/register', {
         method:'POST',
         headers:{
             'Content-Type':'application/json'
@@ -21,9 +21,8 @@ function processRegisterRequest(data) {
 function registerButtonEvent() {
     let inputs = document.getElementsByTagName('input');
     let requestData = {
-        username: inputs[0].value,
-        email: inputs[1].value,
-        password: inputs[2].value,
+        email: inputs[0].value,
+        password: inputs[1].value,
     };
     processRegisterRequest(requestData);
 }

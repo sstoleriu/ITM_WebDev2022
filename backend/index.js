@@ -23,6 +23,7 @@ mongoose
     app.use("/api/user", userRoute); 
     app.use("/auth", authRoute);
     app.use("/", homeRoute);
+    app.use(express.static('client'));
 
 app.listen(process.env.PORT || 5000, () => {
     console.log("Serverul de backend ruleaza")
