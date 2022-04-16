@@ -1,7 +1,16 @@
 const router = require("express").Router();
 const user = require("../models/User");
+const path = require('path');
 const CryptoJS = require("crypto-js");
 //REGISTER
+
+router.get("/register", (req, res)=>{
+    res.sendFile(path.join(__dirname+'/../../client/register/register.html'));
+});
+
+router.get("/login", (req, res)=>{
+    res.sendFile(path.join(__dirname+'/../../client/login/login.html'));
+});
 
 router.post("/register", async (req, res) => {
     const newUser = new user({
