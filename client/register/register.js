@@ -25,9 +25,8 @@ function registerButtonEvent() {
     let requestData = {
         email: inputs[0].value,
         password: inputs[1].value,
-        isStudent: !inputs[2].value,
-        isCompany: inputs[2].value,
-
+        isStudent: inputs[2].value == 'on' ? false : true,
+        isCompany: inputs[2].value == 'on' ? true : false,
     };
     processRegisterRequest(requestData);
 }

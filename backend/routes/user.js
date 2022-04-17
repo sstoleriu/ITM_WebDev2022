@@ -4,8 +4,14 @@ const session = require('express-session');
 const router = require("express").Router();
 const path = require('path');
 
+var sess;
 router.get("/profile", (req, res) => {
-    res.sendFile(path.join(__dirname + "/../../client/user/user.html"));
+    sess = req.session.isCompany;
+
+    if(!sess)
+        res.sendFile(path.join(__dirname + "/../../client/user/user.html"));
+    else
+        res.sendFile(path.join(__dirname+'/../../client/com/com.html'));
 });
 
 router.get("/profile-data", async (req, res) => {
