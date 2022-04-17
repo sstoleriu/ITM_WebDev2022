@@ -95,28 +95,9 @@
             <div class="match-content">
                 <div class="match-container">
                     <div class="match-group">
-                        <button class="match-button" type="button">Tap to see your matches!</button>
-
-                        <div class="match-card">
-                            <span class="match-card-c-name">
-                                <i class="fa-solid fa-building"></i>
-                                Shoreline
-                            </span>
-
-                            <span class="match-card-i-name">
-                                <i class="fa-solid fa-file-contract"></i>
-                                Frontend Developer Internship
-                            </span>
-
-                            <span class="match-card-i-period">
-                                <i class="fa-solid fa-calendar"></i>
-                                dd-mm-yyyy -- dd-mm-yyyy
-                            </span>
-
-                            <span class="match-card-proc">
-                                <i class="fa-solid fa-percent"></i>
-                                100%
-                            </span>
+                        <button class="match-button" type="button" onClick="getMatchData()">Tap to see your matches!</button>
+                        <div id="match-card-wrapper">
+                            
                         </div>
                     </div>
 
@@ -128,5 +109,6 @@
                 </div>
             </div>
         </div>
+        <script src="/js/matchFront.js"></script>
     </body>
 </html>
