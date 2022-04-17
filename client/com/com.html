@@ -29,8 +29,8 @@
                 </div>
 
                 <div class="nav-auth">
+                    <a class="" href="/auth/login" id="loginButton">Login</a>
                     <a class="" href="/logout" id="logoutButton">Logout</a>
-                    <a class="" href="/auth/login" id="loginButton">Login/Profile</a>
                     <a class="" href="/auth/register" id="RegisterButton">Register</a>
                 </div>
             </div>
@@ -48,19 +48,19 @@
                 </div>
 
                 <div class="nav-auth">
+                    <a class="" href="/auth/login">Login</a>
                     <a class="" href="/logout">Logout</a>
-                    <a class="" href="/auth/login">Login/Profile</a>
                     <a class="" href="/auth/register">Register</a>
                 </div>
             </div>
-        </nav>   
+        </nav>  
 
         <div class="profile">
             <div class="profile-details">
                 <div class="profile-details-container">
                     <img src="https://via.placeholder.com/150" alt="profile-details-img">
-                    <h2 class="profile-details-name">Sabs</h2>
-                    <h4 class="profile-details-subtitle">company</h4>
+                    <h2 class="profile-details-name" id="compName"></h2>
+                    <h4 class="profile-details-subtitle" id="type"></h4>
                 </div>
             </div>
 
@@ -93,13 +93,21 @@
                 <div class="setting-group">
                     <h4 class="setting-title">Nume Internship:</h4>
 
-                    <input type="text" placeholder="Nume" id="internship" />
+                    <input type="text" placeholder="Nume" id="nume-internship" />
                 </div>
 
                 <div class="setting-group">
                     <h4 class="setting-title">Description:</h4>
                     <textarea cols="80" rows="6"></textarea>
                 </div>
+
+                <div class="setting-group">
+                    <h4 class="setting-title">Tehnologii:</h4>
+                    <select class="setting-select" multiple="multiple" id="my-select1" name="my-select[]">
+
+                    </select>
+                </div>
+
 
                 <div class="setting-group">
                     <h4 class="setting-title">Duration of the internship:</h4>
@@ -110,11 +118,13 @@
                     <label for="end-date">to</lable>
                     <input type="date" id="end-date" name="end-date" value="" min="2022-04-15" max="2030-12-31">
                     
-                    <a href="#!" class="button" onclick="">Adauga</a>
+                    <a href="#!" class="button" onclick="addInternship()">Adauga</a>
                 </div>
             </div>
         </div>
 
         <script src="/js/jquery.multi-select.js"></script>
+        <script src="/js/navbar.js"></script>
+        <script src="/js/comFront.js"></script>
     </body>
 </html>
