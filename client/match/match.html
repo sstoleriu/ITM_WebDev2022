@@ -5,16 +5,19 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>User profile | InternShip Assistant</title>
+        <title>InternShip Assistant</title>
 
         <!-- CSS -->
         <link rel="stylesheet" href="/css/index.css"> 
         <link rel="stylesheet" href="/css/navbar.css">
-        <link rel="stylesheet" href="/css/user.css">
-        <link rel="stylesheet" href="/css/multi-select.css">
+        <link rel="stylesheet" href="/css/footer.css"> 
+        <link rel="stylesheet" href="/css/match.css"> 
 
         <!-- jQuerry -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+        <!-- FontAwesome -->
+        <script src="https://kit.fontawesome.com/2ee69d0673.js" crossorigin="anonymous"></script>
     </head>
 
     <body>
@@ -43,7 +46,7 @@
 
             <div class="nav-group-buttons-mobile" id="mobile-nav">
                 <div class="nav-buttons">
-                    <a class="" href="/matching">Matches</a>
+                    <a class="" href="#">Matches</a>
                 </div>
 
                 <div class="nav-auth">
@@ -51,9 +54,9 @@
                     <a class="" href="/auth/register">Register</a>
                 </div>
             </div>
-        </nav>    
+        </nav>
 
-        <div class="profile">
+        <div class="match">
             <div class="profile-details">
                 <div class="profile-details-container">
                     <img src="https://via.placeholder.com/150" alt="profile-details-img">
@@ -88,48 +91,42 @@
                 </div>
             </div>
 
-            <div class="profile-settings">
-                <div class="loading"></div>
+            
+            <div class="match-content">
+                <div class="match-container">
+                    <div class="match-group">
+                        <button class="match-button" type="button">Tap to see your matches!</button>
 
-                <h1 class="profile-settings-header">
-                    Setup your account
-                </h1>
+                        <div class="match-card">
+                            <span class="match-card-c-name">
+                                <i class="fa-solid fa-building"></i>
+                                Shoreline
+                            </span>
 
-                <div class="setting-group">
-                    <h4 class="setting-title">Email:</h4>
+                            <span class="match-card-i-name">
+                                <i class="fa-solid fa-file-contract"></i>
+                                Frontend Developer Internship
+                            </span>
 
-                    <input type="email" placeholder="Email" id="email" />
-                </div>
+                            <span class="match-card-i-period">
+                                <i class="fa-solid fa-calendar"></i>
+                                dd-mm-yyyy -- dd-mm-yyyy
+                            </span>
 
-                <div class="setting-group">
-                    <h4 class="setting-title">What I Know:</h4>
-                    <select class="setting-select" multiple="multiple" id="my-select1" name="my-select[]">
+                            <span class="match-card-proc">
+                                <i class="fa-solid fa-percent"></i>
+                                100%
+                            </span>
+                        </div>
+                    </div>
 
-                    </select>
-                </div>
-
-                <div class="setting-group">
-                    <h4 class="setting-title">What I Want To Know:</h4>
-                    <select class="setting-select" multiple="multiple" id="my-select2" name="my-select[]">
-
-                    </select>
-                </div>
-
-                <div class="setting-group">
-                    <h4 class="setting-title">Period of availability</h4>
-
-                    <label for="start-date">From</lable>
-                    <input type="date" id="start-date" name="start-date" value="" min="2022-04-15" max="2030-12-31">
-
-                    <label for="end-date">to</lable>
-                    <input type="date" id="end-date" name="end-date" value="" min="2022-04-15" max="2030-12-31">
-                    
-                    <a href="#!" class="button" onclick="saveProfile()">Salveaza</a>
+                    <div class="match-info">
+                        <p>This is where your list with your matches. Press the button so that we can show you what your matches are.</p>
+                        <p>The algorithm matches you with the internships you have most in common. We are showing you the internships with the biggest percentage.</p>
+                        <p>The AI calculates the percentage of matching by analyzing your profile and compares the data with our databases.</p>
+                    </div>
                 </div>
             </div>
         </div>
-
-        <script src="/js/jquery.multi-select.js"></script>
-        <script src="/js/userFront.js"></script>
     </body>
 </html>
