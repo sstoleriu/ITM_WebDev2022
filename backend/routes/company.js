@@ -42,14 +42,20 @@ router.put("/update", async (req, res) => {
 router.put("/add-internship", async (req, res) => {
     let id = req.session._id;
     try {
-        const addCom = await company.findByIdAndUpdate(
-            id,
+        const addCom = await company.findById(id);
+
+        req.body.internships.forEach(item => {
+            addCom.internships.push(item);
+        });
+
+        const updateCom = await company.findByIdAndUpdate(id, 
             {
-                $push: {internships: req.body.internships}
-            },
-            { new: true }
+                internships: addCom.internships
+            }
         );
-        res.status(200).json(addCom);
+
+
+        res.status(200).json(updateCom);
     } catch (err) {
         res.status(400).json(err);
     }

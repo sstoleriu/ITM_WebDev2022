@@ -52,6 +52,9 @@ function addInternship() {
         "name": document.getElementById("nume-internship").value,
         "technologies": preparedTechnologies
     }
+
+    payload = {'internships': [payload]};
+
     xhttp.onload = function() {
         window.alert(this.responseText);
     }
