@@ -5,7 +5,6 @@ const {TreeSet, TreeMap, TreeMultiSet, TreeMultiMap} = require('jstreemap');
 const router = require("express").Router();
 
 router.get("/find", async(req, res) => {
-    console.log(company)
     const companies = await company.find();
     const users = await User.find();
 
