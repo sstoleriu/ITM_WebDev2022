@@ -23,3 +23,17 @@ document.body.addEventListener('scroll', () => {
         right.style.transform = "TranslateX(0)";
     }
 }, false);
+
+
+function getProfileData() {
+    const xhttp = new XMLHttpRequest();
+    xhttp.onload = function() {
+        console.log(JSON.parse(this.responseText));
+        jsonResponse = JSON.parse(this.responseText);
+
+        document.getElementById("matchingButton").style.display = "block";
+    }
+    xhttp.open("GET", "http://localhost:5000/user/profile-data", true);
+    xhttp.send();
+}
+getProfileData();

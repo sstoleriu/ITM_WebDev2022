@@ -39,3 +39,17 @@ function getMatchData() {
     xhttp.open("GET", "http://localhost:5000/matching/find", true);
     xhttp.send();
 }
+
+function getProfileData() {
+    const xhttp = new XMLHttpRequest();
+    xhttp.onload = function() {
+        console.log(JSON.parse(this.responseText));
+        jsonResponse = JSON.parse(this.responseText);
+
+        document.getElementById("studName").innerHTML = jsonResponse.email;
+        document.getElementById("type").innerHTML = jsonResponse.isCompany === false ? 'student' : 'company';
+    }
+    xhttp.open("GET", "http://localhost:5000/user/profile-data", true);
+    xhttp.send();
+}
+getProfileData();

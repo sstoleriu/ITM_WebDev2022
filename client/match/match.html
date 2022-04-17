@@ -28,12 +28,13 @@
 
             <div class="nav-group-buttons">
                 <div class="nav-buttons">
-                    <a class="" href="/matching">See your matches</a>
+                    <a class="" href="/matching" id="matchingButton">See your matches</a>
                 </div>
 
                 <div class="nav-auth">
-                    <a class="" href="/auth/login">Login</a>
-                    <a class="" href="/auth/register">Register</a>
+                    <a class="" href="/logout" id="logoutButton">Logout</a>
+                    <a class="" href="/auth/login" id="loginButton">Login/Profile</a>
+                    <a class="" href="/auth/register" id="RegisterButton">Register</a>
                 </div>
             </div>
 
@@ -46,22 +47,23 @@
 
             <div class="nav-group-buttons-mobile" id="mobile-nav">
                 <div class="nav-buttons">
-                    <a class="" href="#">Matches</a>
+                    <a class="" href="/matching">See your matches</a>
                 </div>
 
                 <div class="nav-auth">
-                    <a class="" href="/auth/login">Login</a>
+                    <a class="" href="/logout">Logout</a>
+                    <a class="" href="/auth/login">Login/Profile</a>
                     <a class="" href="/auth/register">Register</a>
                 </div>
             </div>
-        </nav>
+        </nav>    
 
         <div class="match">
             <div class="profile-details">
                 <div class="profile-details-container">
                     <img src="https://via.placeholder.com/150" alt="profile-details-img">
-                    <h2 class="profile-details-name">Ion Popescu</h2>
-                    <h4 class="profile-details-subtitle">student</h4>
+                    <h2 class="profile-details-name" id="studName"></h2>
+                    <h4 class="profile-details-subtitle" id="type"></h4>
                 </div>
                 
                 <div class="profile-feedback">
@@ -109,6 +111,8 @@
                 </div>
             </div>
         </div>
+
+        <script src="/js/navbar.js"></script>
         <script src="/js/matchFront.js"></script>
     </body>
 </html>
