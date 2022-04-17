@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const company = require("../models/company");
 const session = require('express-session');
+const path = require("path");
 
 router.get("/profile", (req, res) => {
     res.sendFile(path.join(__dirname + "/../../client/com/com.html"));
