@@ -1,8 +1,13 @@
 const company = require("../models/company");
 const User = require("../models/User");
 const {TreeSet, TreeMap, TreeMultiSet, TreeMultiMap} = require('jstreemap');
+const path = require("path");
 
 const router = require("express").Router();
+
+router.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname+'/../../client/match/match.html'));
+});
 
 router.get("/find", async(req, res) => {
     const companies = await company.find();
