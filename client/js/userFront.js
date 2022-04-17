@@ -18,7 +18,11 @@ function getProfileData() {
         console.log(JSON.parse(this.responseText));
         jsonResponse = JSON.parse(this.responseText);
 
+        document.getElementById("loginButton").innerHTML = "Profile";
+
         document.getElementById("email").value = jsonResponse.email;
+        document.getElementById("studName").innerHTML = jsonResponse.email;
+        document.getElementById("type").innerHTML = jsonResponse.isCompany === false ? 'student' : 'company';
 
         renderSelectInput("my-select1", jsonResponse['iKnow']);
         renderSelectInput("my-select2", jsonResponse['iWant']);

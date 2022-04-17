@@ -3,6 +3,7 @@ const user = require("../models/User");
 const com = require("../models/company");
 const path = require('path');
 const session = require('express-session');
+var sess;
 
 //REGISTER
 
@@ -11,7 +12,11 @@ router.get("/register", (req, res)=>{
 });
 
 router.get("/login", (req, res)=>{
-    res.sendFile(path.join(__dirname+'/../../client/login/login.html'));
+    sess = req.session._id;
+    if(!sess)
+        res.sendFile(path.join(__dirname+'/../../client/login/login.html'));
+    else
+        res.redirect('/user/profile');  
 });
 
 router.post("/register", async (req, res) => {

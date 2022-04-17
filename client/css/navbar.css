@@ -32,6 +32,15 @@
     color: var(--light-pink);
 }
 
+#matchingButton {
+    display: none;
+}
+
+#logoutButton {
+    display: none;
+}
+
+
 .nav-group-buttons {
     flex: 6;
     display: flex;
