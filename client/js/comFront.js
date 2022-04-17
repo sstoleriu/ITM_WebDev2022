@@ -31,7 +31,22 @@ function getProfileData() {
     xhttp.open("GET", "http://localhost:5000/user/profile-data", true);
     xhttp.send();
 }
-//getProfileData();
+// getProfileData();
+
+
+function getProfileData2() {
+    const xhttp = new XMLHttpRequest();
+    xhttp.onload = function() {
+        console.log(JSON.parse(this.responseText));
+        jsonResponse = JSON.parse(this.responseText);
+
+        document.getElementById("compName").innerHTML = jsonResponse.name;
+        document.getElementById("type").innerHTML = jsonResponse.isCompany === false ? 'student' : 'company';
+    }
+    xhttp.open("GET", "http://localhost:5000/user/profile-data", true);
+    xhttp.send();
+}
+getProfileData2();
 
 function addInternship() {
     const xhttp = new XMLHttpRequest();
