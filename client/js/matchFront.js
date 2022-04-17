@@ -46,7 +46,7 @@ function getProfileData() {
         console.log(JSON.parse(this.responseText));
         jsonResponse = JSON.parse(this.responseText);
 
-        document.getElementById("studName").innerHTML = jsonResponse.email;
+        document.getElementById("studName").innerHTML = jsonResponse.name;
         document.getElementById("type").innerHTML = jsonResponse.isCompany === false ? 'student' : 'company';
     }
     xhttp.open("GET", "http://localhost:5000/user/profile-data", true);
