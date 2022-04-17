@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const user = require("../models/User");
+const com = require("../models/company");
 const path = require('path');
 const session = require('express-session');
 
@@ -15,12 +16,22 @@ router.get("/login", (req, res)=>{
 
 router.post("/register", async (req, res) => {
     console.log("Request:", req.body);
-    const newUser = new user({
-        username: req.body.username,
-        email: req.body.email,
-        password: req.body.password,
-        isCompany: req.body.isCompany
-        });
+
+    if (req.body.isCompany){
+        const newCom = new com({
+            name: req.body.username,
+            password: req.body.password,
+            isCompany: req.body.isCompany
+            });
+
+    } else {
+        const newUser = new user({
+            username: req.body.username,
+            email: req.body.email,
+            password: req.body.password,
+            isStudent: !req.body.isCompany
+            });
+    }
 
     try {
         const savedUser = await newUser.save();
