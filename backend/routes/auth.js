@@ -18,8 +18,9 @@ router.post("/register", async (req, res) => {
     const newUser = new user({
         username: req.body.username,
         email: req.body.email,
-        password: req.body.password
-    });
+        password: req.body.password,
+        isCompany: req.body.isCompany
+        });
 
     try {
         const savedUser = await newUser.save();
@@ -35,9 +36,7 @@ router.post("/register", async (req, res) => {
 //LOGIN
 router.post('/login', async (req, res) => {
     try{
-        
         console.log("Request body", req.body);
-
         const newUser = await user.findOne(
             {
                 email: req.body.email
@@ -55,6 +54,7 @@ router.post('/login', async (req, res) => {
             console.log("wp")
         } else {
             req.session._id = newUser._id;
+            req.session.isCompany = newUser.isCompany;
             res.status(201).send("OK");
             console.log("ok")
         }
