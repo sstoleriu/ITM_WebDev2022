@@ -169,6 +169,16 @@ body {
   text-align: center;
 }
 
+#iconsLeft {
+  transform: translateX(-300%);
+  transition: .7s ease;
+}
+
+#iconsRight {
+  transform: translateX(300%);
+  transition: .7s ease;
+}
+
 /* ============ SCROLLBAR ============ */
 
   /* width */

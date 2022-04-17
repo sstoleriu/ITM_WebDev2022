@@ -1,5 +1,6 @@
 const Internship = require("../models/Internship");
 const User = require("../models/User");
+const Comp = require("../models/company");
 const session = require('express-session');
 const router = require("express").Router();
 const path = require('path');
@@ -21,11 +22,24 @@ router.get("/profile-data", async (req, res) => {
     // }
    console.log(req.session);
 
-    const profileData = await User.findOne(
+   var sess = req.session.isCompany;
+
+   let profileData;
+   if(!sess)
+   {
+        profileData = await User.findOne(
+            {
+                _id: req.session._id
+            }
+        );
+   }
+   else {
+    profileData = await Comp.findOne(
         {
             _id: req.session._id
         }
     );
+   }
 
     res.send(profileData);
 });
