@@ -23,15 +23,15 @@ router.post("/register", async (req, res) => {
     console.log("Request:", req.body);
 
     if (req.body.isCompany){
-        const newCom = new com({
-            name: req.body.username,
+        var newCom = new com({
+            name: req.body.email,
             password: req.body.password,
             isCompany: req.body.isCompany
             });
 
     } else {
-        const newUser = new user({
-            username: req.body.username,
+        var newUser = new user({
+            username: req.body.email,
             email: req.body.email,
             password: req.body.password,
             isStudent: !req.body.isCompany
@@ -39,7 +39,14 @@ router.post("/register", async (req, res) => {
     }
 
     try {
-        const savedUser = await newUser.save();
+        if(req.body.isCompany){
+            console.log("aaaa");
+            var savedUser = await newCom.save();
+        } else {
+            console.log("nnnnn");
+            var savedUser = await newUser.save();
+        }
+        
         res.status(201).json(savedUser)
     } catch (err) {
         res.status(500).json(err);
@@ -53,14 +60,21 @@ router.post("/register", async (req, res) => {
 router.post('/login', async (req, res) => {
     try{
         console.log("Request body", req.body);
-        const newUser = await user.findOne(
+        var newUser = await com.findOne({
+                name: req.body.email,
+            });
+        console.log("Com gasit:", newUser); 
+
+        if(!newUser){
+            newUser = await user.findOne(
             {
                 email: req.body.email
             }
-        );
+            );
+        }
 
         console.log("User gasit:", newUser);
-
+        
         inputPassword = req.body.password;
         if (!newUser){
             res.status(401).json("Wrong Email");
