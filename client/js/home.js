@@ -1,3 +1,5 @@
+const { response } = require("express");
+
 document.body.addEventListener('scroll', () => {
     var x = document.getElementById("homeContent");
 

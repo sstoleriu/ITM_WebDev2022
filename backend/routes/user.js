@@ -9,21 +9,19 @@ router.get("/profile", (req, res) => {
 });
 
 router.get("/profile-data", async (req, res) => {
-    /*
-    if(!req.session.email) {
-        res.status(401).send();
-        return;
-    }
-    */
+    // if(!req.session._id) {
+    //     res.status(401).send();
+    //     return;
+    // }
    console.log(req.session);
 
-    const profileData = await user.findOne(
+    const profileData = await User.findOne(
         {
             _id: req.session._id
         }
     );
 
-    res.status(200).send(profileData);
+    res.send(profileData);
 });
 
 router.put("/update", async (req, res) => {
@@ -39,9 +37,9 @@ router.put("/update", async (req, res) => {
             { new: true }
         );
         if(!updatedUser)
-        console.log("nu i");
+        console.log("A aparut o eroare");
         else
-        res.status(200).json(updatedUser);
+        res.status(200).json("Profilul a fost actualizat cu succes!");
     } catch (err) {
         res.status(400).json(err);
     }

@@ -22,8 +22,7 @@ mongoose
 
     app.use(session({
         secret: 'papuc',
-        cookie: {maxAge: 1000 * 60 * 60 * 24},
-        resave: false 
+        cookie: {maxAge: 1000 * 60 * 60 * 24}
     }));
     app.use(cors());
     app.use(express.json());

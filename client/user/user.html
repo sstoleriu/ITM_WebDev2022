@@ -89,6 +89,8 @@
             </div>
 
             <div class="profile-settings">
+                <div class="loading"></div>
+
                 <h1 class="profile-settings-header">
                     Setup your account
                 </h1>
@@ -96,28 +98,20 @@
                 <div class="setting-group">
                     <h4 class="setting-title">Email:</h4>
 
-                    <input type="email" placeholder="Email" />
+                    <input type="email" placeholder="Email" id="email" />
                 </div>
 
                 <div class="setting-group">
                     <h4 class="setting-title">What I Know:</h4>
                     <select class="setting-select" multiple="multiple" id="my-select1" name="my-select[]">
-                        <option value='elem_1'>elem 1</option>
-                        <option value='elem_2'>elem 2</option>
-                        <option value='elem_3'>elem 3</option>
-                        <option value='elem_4'>elem 4</option>
-                        <option value='elem_100'>elem 100</option>
+
                     </select>
                 </div>
 
                 <div class="setting-group">
                     <h4 class="setting-title">What I Want To Know:</h4>
                     <select class="setting-select" multiple="multiple" id="my-select2" name="my-select[]">
-                        <option value='elem_1'>elem 1</option>
-                        <option value='elem_2'>elem 2</option>
-                        <option value='elem_3'>elem 3</option>
-                        <option value='elem_4'>elem 4</option>
-                        <option value='elem_100'>elem 100</option>
+
                     </select>
                 </div>
 
@@ -125,10 +119,12 @@
                     <h4 class="setting-title">Period of availability</h4>
 
                     <label for="start-date">From</lable>
-                    <input type="date" id="start" name="start-date" value="" min="2022-04-15" max="2030-12-31">
+                    <input type="date" id="start-date" name="start-date" value="" min="2022-04-15" max="2030-12-31">
 
                     <label for="end-date">to</lable>
-                    <input type="date" id="start" name="end-date" value="" min="2022-04-15" max="2030-12-31">
+                    <input type="date" id="end-date" name="end-date" value="" min="2022-04-15" max="2030-12-31">
+                    
+                    <a href="#!" class="button" onclick="saveProfile()">Salveaza</a>
                 </div>
             </div>
         </div>
