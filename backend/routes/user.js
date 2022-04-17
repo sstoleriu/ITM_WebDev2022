@@ -37,9 +37,9 @@ router.put("/update", async (req, res) => {
             { new: true }
         );
         if(!updatedUser)
-        console.log("nu i");
+        console.log("A aparut o eroare");
         else
-        res.status(200).json(updatedUser);
+        res.status(200).json("Profilul a fost actualizat cu succes!");
     } catch (err) {
         res.status(400).json(err);
     }
